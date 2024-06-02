@@ -1,0 +1,43 @@
+body {
+    padding-top: 4.5rem;
+}
+
+.navbar-head {
+    z-index: 100;
+}
+footer {
+    flex-direction: column;
+    background-color: rgb(32, 29, 29);
+}
+
+.no-ln {
+    text-decoration: none;
+}
+
+.colord {
+    color: rgb(179, 130, 71);
+}
+
+.f-column {
+    flex-direction: column;
+}
+
+footer h3 {
+    color:aliceblue;
+    font-weight: 600;
+}
+
+footer hr {
+    color: bisque;
+    width: 50%;
+}
+
+.log-holder {
+    background-color: white;
+    padding-block: 1rem;
+    border-radius: 0.2rem;
+}
+
+.log-holder img {
+    width: 25px;
+}

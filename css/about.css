@@ -1,0 +1,123 @@
+h4, .smile-centerer h2 {
+    font-weight: 600;
+    color: cyan;
+}
+.mission-holder {
+    background-color: rgba(119, 119, 119, 0.137);
+    padding: 85px 5px;
+}
+
+.tooth-mission-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto;
+    background-color: white;
+    align-items: center;
+    width: 80%;
+    height: auto;
+}
+
+.tooth-svg {
+    height: 100px;
+}
+
+.advs-holder {
+    background-color:  rgba(119, 119, 119, 0.137);
+}
+
+.adv-lst-holder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style-image: url(../images/linkedin.svg);
+}
+
+.adv-lst-holder ul li {
+    line-height: 35px;
+    
+}
+
+.smile-holder {
+    height: 450px;
+}
+
+.smile-centerer div{
+    text-align: center;
+    color: aliceblue;
+}
+
+.smile-centerer h2{
+    color: aliceblue;
+}
+
+.smile-centerer p{
+    font-size: 1.3rem;
+}
+
+.smile-centerer a {
+    color: antiquewhite;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.apptmt-link {
+    border: 2px solid white;
+    border-radius: 25px;
+}
+
+.namer hr {
+    width: 150px;    
+}
+
+h5 {
+    font-weight: bold;
+    color: cyan;
+}
+
+.core-vals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.img-value-init {
+    width: 300px;
+    
+}
+
+.img-value-init img{
+    border-radius: 150px;
+}
+
+.hld1 {
+    background-color: rgba(23, 101, 202, 0.486);
+}
+
+.hld2 {
+    background-color: rgba(76, 173, 11, 0.76);
+}
+
+.hld3 {
+    background-color: rgb(179, 54, 54);
+}
+
+.hld4 {
+    background-color: rgb(230, 97, 248);
+}
+
+@media (max-width: 890px) {
+    .tooth-mission-grid {
+        width: 100%;
+    }
+
+    .core-vals {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .core-vals div {
+        height: auto;
+    }
+}
+

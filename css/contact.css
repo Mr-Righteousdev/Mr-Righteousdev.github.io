@@ -1,0 +1,98 @@
+.title-holder {
+    height: 250px;
+    background-image: url(../images/dentback.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-blend-mode: darken;
+    position: relative;
+}
+
+.blurness {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.title-name {
+    position: absolute;
+    top: 120px;
+    left: 140px;
+}
+
+.title-name h3 {
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+}
+
+.contact-holder {
+    height: 650px;
+    background-image: url(../images/chair-2584260_1920.jpg);
+}
+
+.ess2 {
+    background: rgba(223, 223, 223, 0.87);
+}
+
+.cntct-rl {
+    position: absolute;
+    top: 250px;
+    left: 140px;
+}
+
+.contact-holder h4 {
+    font-weight: 700;
+}
+
+.grid-div {
+    display: grid;
+    grid-template-columns: 300px 400px;
+    
+}
+
+.nm {
+    color: rgb(238, 155, 0);
+    font-weight: 600;
+}
+
+.form-sec {
+    height: 530px;
+    background-image: url(../images/chair-2584260_1920.jpg);
+}
+
+.ess3 {
+    background: rgba(77, 74, 74, 0.87);
+}
+
+.fm1 {
+    width: 100%;
+}
+
+.fm1 input {
+    width: 60%;
+    background-color: transparent;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-color: burlywood;
+    height: 30px;
+}
+
+.fm1 input::placeholder {
+    color: rgba(216, 216, 216, 0.637);
+}
+
+.fm1 input::active {
+    border-style: none;
+}
+
+.map-sec {
+    height: 800px;
+}
+
+.ess4 {
+    background: rgba(189, 189, 189, 0.911);
+}

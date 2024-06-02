@@ -1,0 +1,33 @@
+body {
+    background-color: #ecf0eed0;
+}
+.dentback {
+    height: auto;
+    width: 420px;
+    object-fit: contain;
+}
+.pos {
+    font-family:Georgia, 'Times New Roman', Times, serif; 
+}
+.card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holder {
+    width: 800px;
+    
+    
+}
+
+.holder img {
+    height: auto;
+    border-top-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
