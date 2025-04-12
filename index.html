@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ssengendo Johnmary - Web Developer Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #0e4166;
+            --secondary-color: #1e88e5;
+            --accent-color: #ff5722;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --dark-bg: #263238;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        nav {
+            background-color: var(--dark-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-child(odd) {
+            background-color: var(--white);
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .project-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white);
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 1;
+            top: 15px;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 22px;
+            }
+            
+            .left::after, .right::after {
+                left: 22px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="container">
+            <img src="/api/placeholder/200/200" alt="Ssengendo Johnmary" class="profile-img" />
+            <h1>Ssengendo Johnmary</h1>
+            <p class="title">Full Stack Web Developer</p>
+            <div class="contact-info">
+                <a href="tel:+256742676696">📱 +256 742 676696</a>
+                <a href="mailto:mrrighteousdev@gmail.com">📧 mrrighteousdev@gmail.com</a>
+                <a href="https://linkedin.com/in/ssengendo-johnmary" target="_blank">🔗 LinkedIn</a>
+                <a href="https://github.com/mrrighteousdev" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate web developer with expertise in full stack development. My focus is on creating robust, scalable, and user-friendly web applications. With a strong foundation in PHP, Laravel, Python, and mobile app development, I bring a versatile skill set to any development team.</p>
+            <p>I have extensive knowledge of Linux environments and version control with Git, which allows me to maintain efficient workflow processes. My journey in technology is driven by a constant desire to learn and implement cutting-edge solutions.</p>
+            <p>Currently pursuing my Information Technology degree, I balance academic knowledge with practical development experience, making me adaptable to diverse project requirements and technical challenges.</p>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            
+            <h3>Programming Languages</h3>
+            <div class="skill-list">
+                <span class="skill-tag">PHP</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">SQL</span>
+            </div>
+            
+            <h3>Frameworks & Libraries</h3>
+            <div class="skill-list">
+                <span class="skill-tag">Laravel</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">jQuery</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">React</span>
+            </div>
+            
+            <h3>Tools & Technologies</h3>
+            <div class="skill-list">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Linux</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">RESTful APIs</span>
+                <span class="skill-tag">Mobile App Development</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Cybersecurity Basics</span>
+                <span class="skill-tag">CTF Experience</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="/api/placeholder/400/200" alt="E-commerce Platform" class="project-img" />
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>A comprehensive e-commerce solution built with Laravel and Vue.js. Features include user authentication, product management, shopping cart functionality, and payment gateway integration.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mrrighteousdev/ecommerce-platform" target="_blank">GitHub</a>
+                            <a href="#" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/400/200" alt="Task Management App" class="project-img" />
+                    <div class="project-info">
+                        <h3>Task Management App</h3>
+                        <p>A responsive mobile-first task management application developed with Laravel backend and Bootstrap frontend. Allows users to create, organize, and track tasks with deadline notifications.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mrrighteousdev/task-manager" target="_blank">GitHub</a>
+                            <a href="#" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/400/200" alt="Community Forum" class="project-img" />
+                    <div class="project-info">
+                        <h3>Community Forum</h3>
+                        <p>An online discussion platform built with PHP and MySQL. Includes features like user profiles, threaded discussions, topic categorization, and moderation tools.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mrrighteousdev/community-forum" target="_blank">GitHub</a>
+                            <a href="#" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="/api/placeholder/400/200" alt="Weather Forecast App" class="project-img" />
+                    <div class="project-info">
+                        <h3>Weather Forecast App</h3>
+                        <p>A Python-based weather application that uses APIs to fetch and display real-time weather data. Features include location detection, 5-day forecasts, and custom notifications.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/mrrighteousdev/weather-app" target="_blank">GitHub</a>
+                            <a href="#" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Junior Web Developer</h3>
+                        <p class="timeline-date">January 2023 - Present</p>
+                        <p><strong>TechSolutions Uganda</strong></p>
+                        <ul>
+                            <li>Developing and maintaining web applications using Laravel and PHP</li>
+                            <li>Creating responsive user interfaces with Bootstrap and JavaScript</li>
+                            <li>Collaborating with design team to implement UI/UX improvements</li>
+                            <li>Managing version control using Git and GitHub</li>
+                            <li>Optimizing database queries and application performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Freelance Web Developer</h3>
+                        <p class="timeline-date">June 2022 - December 2022</p>
+                        <p><strong>Self-employed</strong></p>
+                        <ul>
+                            <li>Built custom websites for small businesses and individuals</li>
+                            <li>Designed and implemented responsive layouts using HTML, CSS, and Bootstrap</li>
+                            <li>Integrated content management systems for client content updates</li>
+                            <li>Provided ongoing maintenance and support for client websites</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>IT Support Intern</h3>
+                        <p class="timeline-date">January 2022 - May 2022</p>
+                        <p><strong>Kampala Digital Solutions</strong></p>
+                        <ul>
+                            <li>Assisted with technical support and troubleshooting</li>
+                            <li>Maintained company Linux servers and workstations</li>
+                            <li>Participated in web development projects using PHP and MySQL</li>
+                            <li>Helped migrate legacy systems to modern frameworks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <div class="container">
+            <h2>Education & Certifications</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Information Technology</h3>
+                        <p class="timeline-date">2023 - Present (Year 2)</p>
+                        <p><strong>St. Lawrence University, Uganda</strong></p>
+                        <p>Relevant coursework: Database Systems, Web Development, Programming Fundamentals, Network Security, Software Engineering, Mobile Application Development</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Operating Systems Certification</h3>
+                        <p class="timeline-date">2022</p>
+                        <p><strong>Cisco Networking Academy</strong></p>
+                        <p>Comprehensive training in operating system architecture, maintenance, and security. Focus on Linux systems administration and troubleshooting.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Web Development Bootcamp</h3>
+                        <p class="timeline-date">2021</p>
+                        <p><strong>Online Training</strong></p>
+                        <p>Intensive program covering modern web development technologies including HTML5, CSS3, JavaScript, PHP, and responsive design principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>I'm currently open to new opportunities and collaborations. Feel free to reach out through any of the following channels:</p>
+            
+            <div class="contact-info" style="color: var(--text-color);">
+                <a href="tel:+256742676696" style="color: var(--secondary-color);">📱 +256 742 676696</a>
+                <a href="mailto:mrrighteousdev@gmail.com" style="color: var(--secondary-color);">📧 mrrighteousdev@gmail.com</a>
+                <a href="https://linkedin.com/in/ssengendo-johnmary" target="_blank" style="color: var(--secondary-color);">🔗 LinkedIn</a>
+                <a href="https://github.com/mrrighteousdev" target="_blank" style="color: var(--secondary-color);">💻 GitHub</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/mrrighteousdev" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/ssengendo-johnmary" target="_blank">LinkedIn</a>
+                <a href="mailto:mrrighteousdev@gmail.com">Email</a>
+            </div>
+            <p>&copy; 2025 Ssengendo Johnmary. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
